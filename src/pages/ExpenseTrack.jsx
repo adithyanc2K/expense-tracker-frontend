@@ -19,7 +19,7 @@ const ExpenseTrack = () => {
 
   // Fetch expenses for logged-in user
   const fetchExpenses = async () => {
-    const res = await fetch("http://localhost:5000/api/expenses", {
+    const res = await fetch("https://expense-tracker-backend-d09y.onrender.com/api/expenses", {
       headers: { Authorization: `Bearer ${token}` },
     });
     const data = await res.json();
@@ -30,7 +30,7 @@ const ExpenseTrack = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await fetch("http://localhost:5000/api/expenses", {
+    await fetch("https://expense-tracker-backend-d09y.onrender.com/api/expenses", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -43,7 +43,7 @@ const ExpenseTrack = () => {
   };
 
   const handleDelete = async (id) => {
-    await fetch(`http://localhost:5000/api/expenses/${id}`, {
+    await fetch(`https://expense-tracker-backend-d09y.onrender.com/api/expenses/${id}`, {
       method: "DELETE",
       headers: { Authorization: `Bearer ${token}` },
     });
@@ -51,7 +51,7 @@ const ExpenseTrack = () => {
   };
 
   const handleUpdate = async (id, updatedData) => {
-    await fetch(`http://localhost:5000/api/expenses/${id}`, {
+    await fetch(`https://expense-tracker-backend-d09y.onrender.com/api/expenses/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
